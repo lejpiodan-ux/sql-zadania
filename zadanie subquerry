@@ -1,24 +1,26 @@
-# 🧮 Analiza średnich cen produktów według kategorii (Northwind)
+Analiza średnich cen produktów w bazie danych Ogólnodostępnej bazy danych (Northwind)
 
-### 🎯 Cel zadania
-Celem zapytania jest analiza średnich cen produktów w poszczególnych kategoriach oraz porównanie ich do ogólnej średniej wszystkich produktów w bazie **Northwind**.  
-Dodatkowo, każda kategoria została przypisana do jednej z trzech grup cenowych na podstawie średniej wartości produktów:
-- **Expensive** – gdy średnia cena > 50  
-- **Normal** – gdy średnia cena > 30  
-- **Cheap** – w pozostałych przypadkach  
+Celem analizy było obliczenie średniej ceny jednostkowej produktów w poszczególnych kategoriach, a następnie sklasyfikowanie każdej kategorii jako Expensive, Normal lub Cheap na podstawie wartości średniej ceny. Dodatkowo do zestawienia dałem aktualną datę wykonania zapytania.
 
----
+Opis rozwiązania  
+W zapytaniu wykorzystano tabele:
 
-### 🧱 Wykorzystane tabele
-- `Products`
-- `Categories`
+- Products  
+- Categories  
 
----
+Oraz techniki:
 
-### ⚙️ Użyte techniki SQL
-- **JOIN** – połączenie tabel `Products` i `Categories` po `CategoryID`  
-- **AVG()** – funkcja agregująca do obliczenia średnich cen  
-- **GROUP BY** – grupowanie danych po nazwie kategorii  
-- **HAVING z podzapytaniem** – filtracja kategorii droższych od średniej wszystkich produktów  
-- **CASE WHEN** – klasyfikacja kategorii według progu cenowego  
-- **CAST(GETDATE() AS DATE)** – wyświetlenie bieżącej daty w formacie bez czasu  
+`INNER JOIN` `do połączenia tabel Products i Categories,  
+- AVG() do obliczenia średniej ceny jednostkowej produktów w każdej kategorii,  
+- GROUP BY do grupowania wyników według kategorii,  
+- HAVING do porównania średnich cen z globalną średnią wszystkich produktów,  
+- CASE do klasyfikacji kategorii jako Expensive, Normal lub Cheap,  
+- CAST(GETDATE() AS DATE) do pobrania bieżącej daty bez czasu,  
+- ORDER BY do posortowania wyników malejąco według średniej ceny.  
+
+Rezultat zapisanego kodu  
+Zapytanie zwraca listę kategorii wraz z ich średnią ceną jednostkową, statusem wartości produktu (na podstawie przedziałów cenowych) oraz aktualną datą wykonania analizy.  
+Wyniki są posortowane od najwyższej do najniższej średniej ceny produktów.
+
+Projekt SQL wykonany jako część portfolio analityka danych.  
+Autor: Piotr Leja
