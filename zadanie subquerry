@@ -10,7 +10,7 @@ W zapytaniu wykorzystano tabele:
 
 Oraz techniki:
 
-`INNER JOIN` do połączenia tabel Products i Categories,  
+```INNER JOIN``` do połączenia tabel Products i Categories,  
 - AVG() do obliczenia średniej ceny jednostkowej produktów w każdej kategorii,  
 - GROUP BY do grupowania wyników według kategorii,  
 - HAVING do porównania średnich cen z globalną średnią wszystkich produktów,  
