@@ -8,13 +8,13 @@ W zadaniu zostały użyte tabele:
 
 Oraz techniki:
 
-`INNER JOIN` do połączenia tabel Products i Categories,  
-` AVG() `do obliczenia średniej ceny jednostkowej produktów w każdej kategorii,  
-` GROUP BY `do grupowania wyników według kategorii,  
-` HAVING `do porównania średnich cen z globalną średnią wszystkich produktów,  
-`CASE `do klasyfikacji kategorii jako Expensive, Normal lub Cheap,  
-` CAST(GETDATE() AS DATE)` do pobrania bieżącej daty bez czasu,  
-` ORDER BY` do posortowania wyników malejąco według średniej ceny.  
+-`INNER JOIN` do połączenia tabel Products i Categories,  
+-` AVG() `do obliczenia średniej ceny jednostkowej produktów w każdej kategorii,  
+-` GROUP BY `do grupowania wyników według kategorii,  
+-` HAVING `do porównania średnich cen z globalną średnią wszystkich produktów,  
+-`CASE `do klasyfikacji kategorii jako Expensive, Normal lub Cheap,  
+-` CAST(GETDATE() AS DATE)` do pobrania bieżącej daty bez czasu,  
+-` ORDER BY` do posortowania wyników malejąco według średniej ceny.  
 
 Rezultat zapisanego kodu  
 Zapytanie zwraca listę kategorii wraz z ich średnią ceną jednostkową, statusem wartości produktu oraz aktualną datą wykonania analizy.  
