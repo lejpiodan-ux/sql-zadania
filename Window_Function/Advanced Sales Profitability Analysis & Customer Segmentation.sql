@@ -1,3 +1,4 @@
+-- STEP 1: Data cleaning, date formatting, and shipping cost ratio calculation
 with dat as 
 (
 	select
@@ -16,6 +17,7 @@ with dat as
 		territoryid 
 	from sales.salesorderheader  
 ) ,
+-- STEP 2: Delivery performance classification (Fast, Standard, Delayed)
 next as 
 (
 	select
@@ -28,6 +30,7 @@ next as
 		
 	from dat 
 ) , 
+-- STEP 3: Customer data joining and historical trend analysis (Previous Order Value)
  fre as 
 (
   	select
@@ -47,6 +50,7 @@ next as
   	left join next n
   		on n.salesorderid = soh.salesorderid
 ),
+-- STEP 4: Monthly aggregation of sales per customer
  win as
 (
 	 select  
@@ -56,6 +60,7 @@ next as
  	from fre
 	
 ), 
+-- STEP 5: Customer ranking based on monthly spending
  ran as
 (
  	select 
@@ -63,6 +68,7 @@ next as
  		dense_rank ()over (partition by ym order by total_sum_each_customer_monthly desc)as customerrank
  	from win
 ),
+-- STEP 6: Territorial analysis and yearly running total calculation
  teri as
 (
  	select
@@ -73,6 +79,7 @@ next as
  	join sales.salesterritory st 
 		on r.territoryid = st.territoryid
  )
+-- FINAL OUTPUT: Global segmentation (NTILE) and business rule filtering
  	select 
  		*,
  		ntile(10) over ( order by totaldue desc) as "Biggest_whales"
