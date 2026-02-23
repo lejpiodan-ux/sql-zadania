@@ -8,3 +8,18 @@
 8.Cumulative Territorial Sales: Calculate a running total of SubTotal for each territory, resetting the sum at the beginning of each year.
 9.Whale Segmentation (N-tile): Divide all orders into 10 equal groups based on TotalDue to identify the top 10% ("Whales").
 10.Final Filtering: Retain only records where the Freight ratio is greater than 2% and the delivery status is NOT "Fast".
+
+Techniques used in this query:
+*CTE'S
+*COALESCE
+*INTERVAL
+*TO_CHART
+*CASE
+*::DATE (DATA TYPE FORMATING)
+
+Used Window functions:
+
+*LAG
+*SUM
+*DENSE_RANK
+*NTILE
