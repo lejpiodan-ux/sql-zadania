@@ -44,7 +44,7 @@ List of tasks realized in this query
   Calculating delivery time differences.
   This allows time-based performance analysis (delivery speed classification).
   
-### "TO_CHART"
+### "TO_CHAR"
   In this query it is used to Extract month names
   
 ###  "CASE"
@@ -97,9 +97,15 @@ List of tasks realized in this query
 # Result 
 The query calculates order values and evaluates delivery performance by handling missing shipping data and categorizing lead times. It tracks customer loyalty by comparing current purchases with their transaction history and creates monthly performance rankings. Finally, the analysis includes a territorial growth report through running totals and segments the entire dataset to identify the highest-value orders for strategic business review.
 
+Estimated effort:  15h
+  * 2 days - query planning + getting familiar with dbeaver and Postgres language, case sensitivities (8h-10h)
+  * Github upload + Readme (5h)
+  * Date of completion: 24.02.2026
+    
 ##### Used sql language: Postgres
 ##### Used database: Adventureworks2017
 ##### Used application: Dbeaver
 ##### Author: Piotr Leja
+
 As a part of Junior Data Analyst Portfolio
   
