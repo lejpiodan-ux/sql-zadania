@@ -23,7 +23,7 @@ List of tasks realized in this query
 * Final Filtering: Retain only records where the Freight ratio is greater than 2% and the delivery status is NOT "Fast".
 
 # Techniques used in this query:
-####  "CTE'S"
+###  "CTE'S"
   Each CTE represents a transformation stage:
   * Data cleaning and preprocessing
   * Business rule classification
@@ -33,21 +33,21 @@ List of tasks realized in this query
   * Territorial running totals
   
   
-####  "COALESCE"
+###  "COALESCE"
   If shipdate is missing, it is replaced with orderdate + 7 days
   This ensures shipping delay analysis remains consistent.
   Prevents null-based calculation errors. It improves data quality and analytical reliability
 
-#### "INTERVAL"
+### "INTERVAL"
   Example use case:
   Estimating expected shipping date (orderdate + interval '7 days').
   Calculating delivery time differences.
   This allows time-based performance analysis (delivery speed classification).
   
-#### "TO_CHART"
+### "TO_CHART"
   In this query it is used to Extract month names
   
-####  "CASE"
+###  "CASE"
 
  * Delivery performance classification
    
@@ -60,25 +60,25 @@ List of tasks realized in this query
     First half
     Second half
   
-####  "::DATE (DATA TYPE FORMATING)"
+###  "::DATE (DATA TYPE FORMATING)"
 
   In this query, it is used to:
   Remove the time component from orderdate and shipdate
 
 # Used Window functions:
 
-####  "LAG"
+###  "LAG"
 
  * Retrieves the previous order value per customer
  * Enables historical trend analysis
  * Allows comparison between current and previous purchase behavior
   
-####  "SUM (OVER)"
+###  "SUM (OVER)"
   Used for:
  * Monthly customer spending
  * Territory-level yearly running revenue totals
   
-####  "DENSE_RANK"
+###  "DENSE_RANK"
 
   Ranks customers based on monthly spending.
   Used for:Identifying top-performing customers per month.
@@ -89,7 +89,7 @@ List of tasks realized in this query
 
 
   
-####  "NTILE"
+###  "NTILE"
 
   Groups whole query to 10 groups 
   Customers are segmented by total order value
